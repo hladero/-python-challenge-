@@ -67,8 +67,56 @@ def calculate_average_changes():
         # 3.3 Return the result
         return total_amount/month_cont
 
-   
+def calculate_greatest_increase():
+    # 4.1 Set the path for the file
+    Pybank_csv = os.path.join( 'Resources', 'budget_data.csv')
 
+    # 4.2 Read trough the csv
+    greatest_increase = 0
+    with open (Pybank_csv, mode = 'r') as csv_file:
+        csv_reader=csv.reader(csv_file, delimiter =',')
+
+        # 4.2.1 Loop trough the months and find the highest value. 
+        # I will check the value of each row to compare if the value is higher than greatest_increase
+        #then greatest_increase become the value of the next row.
+        #If the value is lower then I will step into the next row
+
+        lines = 0
+        for row in csv_reader:
+            if lines > 0:
+                if int(row[1]) > greatest_increase:
+                    greatest_increase = int(row[1])
+            lines += 1
+
+    #4.3 return the result
+    return greatest_increase
+
+def calculate_the_greatest_decrease():
+    # 5.1 Set the path for the file
+    Pybank_csv = os.path.join( 'Resources', 'budget_data.csv')
+
+    # 5.2 Read trough the csv
+    greatest_increase = 0
+    with open (Pybank_csv, mode = 'r') as csv_file
+        csv_reader = csv.reader(csv_file, delimiter =',')
+
+        # 5.2.1 Loop trough the months and find the highest value. 
+        # I will check the value of each row to compare if the value is lower than greatest_decrease
+        #then greatest income become the value of the next row.
+        #If the value is lower then I will step into the next row
+        lines = 0
+        for row in csv_reader:
+            if lines > 0:
+                if int(row[1]) < greatest_decrease:
+                    greatest_decrease = int(row[1])
+            lines +=1
+        
+        #5.3 Return the result
+        return greatest_decrease
+
+
+
+        
 
 
 
