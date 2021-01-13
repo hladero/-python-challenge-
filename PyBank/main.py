@@ -120,27 +120,27 @@ if __name__ == '__main__':
     with open(Pybank_csv, "w") as txt_file:
 
     # 1. The total number of months included in the dataset
-    total_months = calculate_total_months()
+        total_months = calculate_total_months()
  
     # 2. The total_amount_profit_losses included in the dataset
-    total_amount_profit_losses = calculate_count_total_amount_profit_losses()
+        total_amount_profit_losses = calculate_count_total_amount_profit_losses()
 
     # 3. The averagel_changes included in the dataset
-    averagel_changes = calculate_average_changes()
+        averagel_changes = calculate_average_changes()
 
     # 4. The greatest_increase included in the dataset
-    greatest_increase = calculate_greatest_increase()
+        greatest_increase = calculate_greatest_increase()
 
     # 5. The greatest_decrease included in the dataset
-    greatest_decrease = calculate_greatest_decrease()
+        greatest_decrease = calculate_greatest_decrease()
 
-    print("Financial Analysis")
-    print("\t----------------------------")
-    print("\tTotal Months: {:.2f}".format(total_months))
-    print("\tTotal: {:.2f}".format(total_amount_profit_losses))
-    print("\tAverage Change: {:.2f}".format(averagel_changes))
-    print("\tGreatest Increase in Profits: {:.2f}".format(greatest_increase))
-    print("\tGreatest Decrease in Profits: {:.2f}".format(greatest_decrease))
+        print("Financial Analysis")
+        print("\t----------------------------")
+        print("\tTotal Months: {:.2f}".format(total_months))
+        print("\tTotal: {:.2f}".format(total_amount_profit_losses))
+        print("\tAverage Change: {:.2f}".format(averagel_changes))
+        print("\tGreatest Increase in Profits: {:.2f}".format(greatest_increase))
+        print("\tGreatest Decrease in Profits: {:.2f}".format(greatest_decrease))
 
         
 
