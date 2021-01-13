@@ -26,11 +26,12 @@ def calculate_total_months():
     # 1.3 Return the result
     return month_count
 
-def calculate_total_amount_profit_losses():
+def calculate_count_total_amount_profit_losses():
     # 2.1 Set the path for the file
     Pybank_csv = os.path.join( 'Resources', 'budget_data.csv')
 
     #2.2 Read trough the csv
+    total_amount = 0
     with open (Pybank_csv, 'r') as csvfile:
         csv_reader = csv.reader(csvfile,delimiter = ',')
 
@@ -91,13 +92,13 @@ def calculate_greatest_increase():
     #4.3 return the result
     return greatest_increase
 
-def calculate_the_greatest_decrease():
+def calculate_greatest_decrease():
     # 5.1 Set the path for the file
     Pybank_csv = os.path.join( 'Resources', 'budget_data.csv')
 
     # 5.2 Read trough the csv
-    greatest_increase = 0
-    with open (Pybank_csv, mode = 'r') as csv_file
+    greatest_decrease = 0
+    with open (Pybank_csv, mode = 'r') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter =',')
 
         # 5.2.1 Loop trough the months and find the highest value. 
@@ -114,7 +115,32 @@ def calculate_the_greatest_decrease():
         #5.3 Return the result
         return greatest_decrease
 
+if __name__ == '__main__':
 
+    with open(Pybank_csv, "w") as txt_file:
+
+    # 1. The total number of months included in the dataset
+    total_months = calculate_total_months()
+ 
+    # 2. The total_amount_profit_losses included in the dataset
+    total_amount_profit_losses = calculate_count_total_amount_profit_losses()
+
+    # 3. The averagel_changes included in the dataset
+    averagel_changes = calculate_average_changes()
+
+    # 4. The greatest_increase included in the dataset
+    greatest_increase = calculate_greatest_increase()
+
+    # 5. The greatest_decrease included in the dataset
+    greatest_decrease = calculate_greatest_decrease()
+
+    print("Financial Analysis")
+    print("\t----------------------------")
+    print("\tTotal Months: {:.2f}".format(total_months))
+    print("\tTotal: {:.2f}".format(total_amount_profit_losses))
+    print("\tAverage Change: {:.2f}".format(averagel_changes))
+    print("\tGreatest Increase in Profits: {:.2f}".format(greatest_increase))
+    print("\tGreatest Decrease in Profits: {:.2f}".format(greatest_decrease))
 
         
 
