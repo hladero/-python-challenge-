@@ -130,6 +130,7 @@ if __name__ == '__main__':
     # 3. The percentage of votes each candidate won
     # 4. The total number of votes each candidate won
         dict_candidate_votes = {} 
+        for candidate in candidates:
             total_votes_by_candidate = calculate_total_votes_by_candidate(candidate)
             percentage_votes_by_candidate = calculate_percentage_votes_of_each_candidate(total_votes_by_candidate, total_votes)
             print("{}: {:.3f}% ({})".format(candidate, percentage_votes_by_candidate, total_votes_by_candidate))
